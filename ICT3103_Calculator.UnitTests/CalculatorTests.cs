@@ -137,5 +137,14 @@ namespace ICT3101_Calculator.UnitTests
             // Assert
             Assert.That(result, Is.EqualTo(b));
         }
+
+        [Test]
+        [TestCase(0, 24690)]
+        public void MagicNum_Equals(double a, double b)
+        {
+            IFileReader fileReader = new FileReader();
+            double result = _calculator.GenMagicNum(a, fileReader);
+            Assert.That(result, Is.EqualTo(b));
+        }
     }
 }

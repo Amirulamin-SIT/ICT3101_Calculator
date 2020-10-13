@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing.Printing;
 using System.Text;
+using System.IO;
 
 namespace ICT3101_Calculator
 {
@@ -78,6 +79,22 @@ namespace ICT3101_Calculator
                 return res;
             }
 
+        }
+
+        public double GenMagicNum(double input, IFileReader fileReader)
+        {
+            double result = 0;
+            int choice = Convert.ToInt16(input);
+            //Dependency------------------------------
+            FileReader getTheMagic = (FileReader)fileReader;
+            //----------------------------------------
+            string[] magicStrings = getTheMagic.Read("MagicNumbers.txt");
+            if ((choice >= 0) && (choice < magicStrings.Length))
+            {
+                result = Convert.ToDouble(magicStrings[choice]);
+            }
+            result = (result > 0) ? (2 * result) : (-2 * result);
+            return result;
         }
     }
 }

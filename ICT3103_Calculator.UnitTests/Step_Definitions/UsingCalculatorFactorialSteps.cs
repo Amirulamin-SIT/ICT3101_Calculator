@@ -23,7 +23,7 @@ namespace ICT3103_Calculator.UnitTests.Step_Definitions
         [When(@"I enter ""(.*)""")]
         public void WhenIEnter(int p0)
         {
-            _result = _calculator.Factorial(p0);
+            //_result = _calculator.Factorial(p0);
         }
     }
 }
