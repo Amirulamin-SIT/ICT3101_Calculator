@@ -74,7 +74,7 @@ namespace ICT3101_Calculator
                 {
                     res *= i;
                 }
-                int hie = 1;
+                int hiemonkahmm = 1;
                 return res;
             }
 
